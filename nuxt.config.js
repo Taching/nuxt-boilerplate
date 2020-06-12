@@ -44,6 +44,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     // Doc: https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/vuetify',
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     ['@nuxtjs/eslint-module', { fix: true }],
@@ -61,10 +62,10 @@ export default {
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
-  // vuetify: {
-  //   customVariables: ["~/assets/scss/variables.scss"],
-  //   treeShake: true
-  // },
+  vuetify: {
+    customVariables: ['~/assets/scss/variables.scss'],
+    treeShake: true,
+  },
   /*
    ** Build configuration
    */
