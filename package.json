@@ -1,8 +1,8 @@
 {
   "name": "nuxt-boilerplate",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
-  "author": "",
+  "author": "Takatoshi Wada",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -29,7 +29,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
-    "sass-loader": "^8.0.2",
-    "webpack": "^4.43.0"
+    "sass-loader": "^10",
+    "webpack": "^4.43.0",
+    "xxxxx": "^1.0.3"
   }
 }

@@ -2,7 +2,7 @@ require('dotenv').config()
 
 export default {
   // we need to have universal
-  mode: 'spa',
+  ssr: false,
   /*
    ** Headers of the page
    */
@@ -18,7 +18,15 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      // FONTS
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap',
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -27,11 +35,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/scss/_main.scss'],
+  css: ['~/assets/scss/index.scss'],
   styleResources: {
     scss: [
       '~/assets/scss/*.scss',
-      '~/assets/scss/_main.scss', // use underscore "_" & also file extension ".scss"
+      '~/assets/scss/index.scss', // use underscore "_" & also file extension ".scss"
     ],
   },
   /*
