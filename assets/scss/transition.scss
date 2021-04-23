@@ -1,0 +1,66 @@
+@mixin zoomIn($p1, $p2) {
+    .fg-zoom-in-#{$p1}-#{$p2}-enter-active,
+    .fg-zoom-in-#{$p1}-#{$p2}-leave-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: $fadeTransition;
+      transform-origin: $p1 $p2;
+    }
+    .fg-zoom-in-#{$p1}-#{$p2}-enter,
+    .fg-zoom-in-#{$p1}-#{$p2}-leave-active {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  // zoom in top
+  .fg-zoom-in-top-enter-active,
+  .fg-zoom-in-top-leave-active {
+    opacity: 1;
+    transform: scaleY(1);
+    transition: $fadeTransition;
+    transform-origin: center top;
+  }
+  .fg-zoom-in-top-enter,
+  .fg-zoom-in-top-leave-active {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  // zoom in bottom
+  .fg-zoom-in-bottom-enter-active,
+  .fg-zoom-in-bottom-leave-active {
+    opacity: 1;
+    transform: scaleY(1);
+    transition: $fadeTransition;
+    transform-origin: center bottom;
+  }
+  .fg-zoom-in-bottom-enter,
+  .fg-zoom-in-bottom-leave-active {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  @include zoomIn(left, top);
+  @include zoomIn(right, top);
+  @include zoomIn(left, bottom);
+  @include zoomIn(right, bottom);
+  @include zoomIn(center, center);
+
+
+  @mixin slideIn($p1) {
+    .fg-slide-in-#{$p1}-enter-active,
+    .fg-slide-in-#{$p1}-leave-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: $fadeTransition;
+      transform-origin: center $p1;
+    }
+    .fg-slide-in-#{$p1}-enter,
+    .fg-slide-in-#{$p1}-leave-active {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  @include slideIn(top);
