@@ -1,0 +1,131 @@
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + '--' + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector + "." + $B + '__' + $unit + ","};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin halfBorder() {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transform: scaleY(0.5);
+    border-top: 1px solid $--color-border;
+  }
+}
+
+@mixin borderTop() {
+  @include halfBorder();
+  &:before {
+    top: 0;
+  }
+}
+
+@mixin borderBottom() {
+  @include halfBorder();
+  &:before {
+    bottom: 0;
+  }
+}
+
+@mixin b($block) {
+  $B: 'fg-'+$block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin utils-user-select($value) {
+  -moz-user-select: $value;
+  -webkit-user-select: $value;
+  -ms-user-select: $value;
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{'is-' + $state} {
+      @content;
+    }
+  }
+}
+
+@mixin utils-clearfix {
+  $selector: &;
+
+  @at-root {
+    #{$selector}::before,
+    #{$selector}::after {
+      display: table;
+      content: "";
+    }
+    #{$selector}::after {
+      clear: both
+    }
+  }
+}
+
+@mixin pseudo($pseudo) {
+  @at-root #{&}#{':#{$pseudo}'} {
+    @content
+  }
+}
+
+@mixin scrollbar() {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $--color-primary-placeholder;
+    cursor: pointer;
+    border-radius: $--border-radius-2;
+  }
+}
+
+@mixin borderBottom($pos) {
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    #{$pos}: 0;
+    width: 100%;
+    border-#{$pos}: 1px solid $--color-border;
+  }
+}

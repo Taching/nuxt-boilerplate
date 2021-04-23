@@ -2,7 +2,7 @@ require('dotenv').config()
 
 export default {
   // we need to have universal
-  mode: 'spa',
+  ssr: false,
   /*
    ** Headers of the page
    */

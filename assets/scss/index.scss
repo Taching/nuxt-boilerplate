@@ -2,11 +2,9 @@
  * variable
  */
  @import "./function";
- @import "./mixin";
- @import "./size";
  @import "./fonts";
  @import "./colors";
- @import "./transition";
+ @import "./mixin";
 
  $--sm: 768px !default;
  $--md: 992px !default;
@@ -21,5 +19,3 @@
    'xl' : (min-width: $--xl)
  );
 
- $transitionTime: 0.3s;
- $fadeTransition: transform $transitionTime cubic-bezier(0.23, 1, 0.32, 1), opacity $transitionTime cubic-bezier(0.23, 1, 0.32, 1);

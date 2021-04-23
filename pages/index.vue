@@ -42,7 +42,6 @@ export default {
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color: $blue-100;
   letter-spacing: 1px;
 }
 

@@ -1,3 +1,6 @@
+
+ $transitionTime: 0.3s;
+ $fadeTransition: transform $transitionTime cubic-bezier(0.23, 1, 0.32, 1), opacity $transitionTime cubic-bezier(0.23, 1, 0.32, 1);
 @mixin zoomIn($p1, $p2) {
     .fg-zoom-in-#{$p1}-#{$p2}-enter-active,
     .fg-zoom-in-#{$p1}-#{$p2}-leave-active {
