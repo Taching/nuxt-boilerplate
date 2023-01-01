@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/style-resources": "^1.0.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.15.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
@@ -30,7 +30,7 @@
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
     "sass-loader": "^10",
-    "webpack": "^4.43.0",
+    "webpack": "^5.75.0",
     "xxxxx": "^1.0.3"
   }
 }
